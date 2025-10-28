@@ -291,6 +291,8 @@ html, body {
     </div>
 
     <div style="position:relative;z-index:34;margin-top:40px;display:flex;justify-content:center;width:100%">
+      <div class="card" id="arabicCard" style="display:none">
+        <div class="arabic-text" id="arabicText"></div>
       </div>
     </div>
 
@@ -308,58 +310,20 @@ html, body {
     // ---------- configuration ----------
     const englishName = 'Mairam'; // displayed English name
 const typedArabic = `
-مريومتي حبيبتي 🌹
-نن عيون أختك، وكل سنة وأنتِ طيبة وبخير يا أرق قلب في الدنيا ❤️
+مريومتي حبيبتي ❤️
+نن عيون أختك، كل سنة وانتي طيبة وبخير.
+كل سنة وانتي معايا وأقرب حد لقلبي.
 
-كل سنة وأنتِ معايا،
-وأقرب حد لقلبي،
-كل سنة وأنتِ الحد اللي عمري ما هعرف أعوّضه ولا ألاقي زيه
+كل سنة وانتي حد جميل،
+مش هعرف أعوضه ولا أشوف زيه.
+ربنا يخليكي ليا، وميرحمناش من بعض 
 
-ربنا يخليكي ليا وما يحرمنيش منك أبدًا،
-كل سنة وأنتِ عيوني،
-وأختي اللي ما جابتهاش أمي بس جابها القدر بمحبة صافية 💗
+كل سنة وانتي عيوني،
+وأختي اللي مجبتهاش أمي،
+وعقبال مليون سنة وإحنا مع بعض ❤️❤️
 
-وعقبال مليون سنة وإحنا مع بعض،
-بنضحك، ونطمن، ونكون سند لبعض دايمًا 💞
-
-Happy Birthday يا مريومتي 🎂🌸
+Happy Birthday مريومتي 🎂💕
 `;
-
-const finalMessage = "Happy Birthday مريومتي ♥♥";
-
-let index = 0;
-const textElement = document.getElementById("arabicText");
-
-function typeText() {
-  if (index < typedArabic.length) {
-    textElement.innerHTML += typedArabic.charAt(index);
-    index++;
-    setTimeout(typeText, 60); // سرعة الكتابة
-  } else {
-    // بعد ما يخلص الكلام كله يستنى ثانيتين
-    setTimeout(clearAndShowFinal, 2000);
-  }
-}
-
-function clearAndShowFinal() {
-  textElement.innerHTML = ""; // يمسح الكلام كله
-  typeFinalMessage(); // يكتب الجملة الأخيرة
-}
-
-function typeFinalMessage() {
-  let i = 0;
-  function writeFinal() {
-    if (i < finalMessage.length) {
-      textElement.innerHTML += finalMessage.charAt(i);
-      i++;
-      setTimeout(writeFinal, 70);
-    }
-  }
-  writeFinal();
-}
-
-typeText();
-
 
     // ---------- helpers ----------
     const overlay = document.getElementById('overlay');
